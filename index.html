@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Priya❤️</title>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); min-height:100vh; display:flex; align-items:center; justify-content:center; overflow-x:hidden; position:relative;}
+        .heart {position:absolute; width:20px; height:20px; background:rgba(255,255,255,0.3); transform:rotate(45deg); animation:float 6s infinite;}
+        .heart:before,.heart:after {content:''; position:absolute; width:20px; height:20px; background:rgba(255,255,255,0.3); border-radius:50%;}
+        .heart:before {top:-10px; left:0;}
+        .heart:after {left:10px; top:0;}
+        @keyframes float {0%,100%{transform:translateY(100vh) rotate(45deg); opacity:0;} 10%,90%{opacity:1;}}
+        .container {background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); border-radius:30px; padding:60px 40px; max-width:700px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.3); text-align:center; animation:slideIn 0.8s ease-out; position:relative; z-index:1;}
+        @keyframes slideIn {from {opacity:0; transform:translateY(-50px);} to {opacity:1; transform:translateY(0);}}
+        h1 {color:#667eea; font-size:3em; margin-bottom:20px; animation:pulse 2s infinite;}
+        @keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+        .emoji {font-size:4em; margin:20px 0; display:inline-block; animation:bounce 2s infinite;}
+        @keyframes bounce {0%,20%,50%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-20px);} 60%{transform:translateY(-10px);}}
+        p {color:#333; font-size:1.2em; line-height:1.8; margin:20px 0;}
+        .message-box {background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%); color:white; padding:30px; border-radius:20px; margin:30px 0; box-shadow:0 10px 30px rgba(245,87,108,0.3);}
+        .button {background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:white; border:none; padding:15px 40px; font-size:1.1em; border-radius:50px; cursor:pointer; margin:20px 10px; transition:all 0.3s ease; box-shadow:0 5px 15px rgba(102,126,234,0.4);}
+        .button:hover {transform:translateY(-3px); box-shadow:0 8px 25px rgba(102,126,234,0.6);}
+        .hidden {display:none;}
+        .response {margin-top:30px; padding:20px; border-radius:15px; animation:fadeIn 0.5s ease-in;}
+        @keyframes fadeIn {from {opacity:0;} to {opacity:1;}}
+        .yes-response {background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); color:#333;}
+        .lyrics-container {background:rgba(255,255,255,0.95); padding:30px; border-radius:15px; margin:20px 0; max-height:400px; overflow-y:auto;}
+        .lyric-line {font-size:1.2em; line-height:2; color:#555; padding:8px; margin:5px 0; border-radius:8px; transition:all 0.3s ease;}
+        .lyric-line:hover {background:rgba(102,126,234,0.1); color:#667eea;}
+        @media(max-width:600px){.container{padding:40px 20px;} h1{font-size:2em;} .lyric-line{font-size:1em;}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sorry 💔</h1>
+        <div class="emoji">😢</div>
+        
+        <p>Truly sorry.</p>
+        
+        <div class="message-box">
+            <p><strong>Please accept my apologies for hurting you, Priya😔</strong></p>
+        </div>
+
+        <div id="question">
+            <p style="font-size:1.3em;color:#667eea;font-weight:bold;">Forgive me?</p>
+            <button class="button" onclick="forgive()">Yes ❤️</button>
+            <button class="button no-button" onclick="moveButton()" onmouseover="moveButton()">No</button>
+        </div>
+
+        <div id="response" class="response hidden"></div>
+    </div>
+
+    <script>
+        // Floating hearts
+        for(let i=0;i<15;i++){
+            let heart=document.createElement('div');
+            heart.className='heart';
+            heart.style.left=Math.random()*100+'%';
+            heart.style.animationDelay=Math.random()*6+'s';
+            heart.style.animationDuration=(Math.random()*3+4)+'s';
+            document.body.appendChild(heart);
+        }
+
+        function forgive(){
+            const response=document.getElementById('response');
+            const question=document.getElementById('question');
+            question.classList.add('hidden');
+            response.classList.remove('hidden');
+            response.className='response yes-response';
+            response.innerHTML=`
+                <h2 style="color:#667eea;font-size:2em;">Thanks ❤️</h2>
+                <div style="font-size:3em;margin:20px 0;">🎵🎶🎵</div>
+                
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    style="border-radius:15px;margin:20px 0;max-width:560px;" 
+                    src="https://www.youtube.com/embed/Bg-oUSmXacs?start=509&end=606" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+                
+                <div class="lyrics-container">
+Was it sun through the haze
+That made all your looks
+As warm as moonlight?
+As a pearl deep your eyes
+Tears have flown away
+All the same light
+
+
+Did her eyes at the turn of the century
+Tell me plainly
+When we meet, how we'll look
+As we smile time will leave me clearly
+
+
+Like leaves we touch, we see
+We will know the story
+As autumn calls we'll both remember
+All those many years ago
+                </div>
+            `;
+            // Celebration hearts
+            for(let i=0;i<30;i++){
+                setTimeout(()=>{
+                    let heart=document.createElement('div');
+                    heart.className='heart';
+                    heart.style.left=Math.random()*100+'%';
+                    heart.style.animationDuration='2s';
+                    document.body.appendChild(heart);
+                    setTimeout(()=>heart.remove(),2000);
+                },i*100);
+            }
+        }
+
+        function moveButton(){
+            const button=document.querySelector('.no-button');
+            const container=document.querySelector('.container');
+            const maxX=container.offsetWidth-button.offsetWidth-40;
+            const maxY=container.offsetHeight-button.offsetHeight-40;
+            const randomX=Math.random()*maxX;
+            const randomY=Math.random()*maxY;
+            button.style.position='absolute';
+            button.style.left=randomX+'px';
+            button.style.top=randomY+'px';
+            button.style.transition='all 0.3s ease';
+        }
+    </script>
+</body>
+</html>
